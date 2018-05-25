@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TodoItem from "./TodoItem";
 import PropTypes from 'prop-types';
+import TodoForm from "./TodoForm";
 
 export default class TodoList extends React.Component {
     constructor(props) {
@@ -31,17 +32,13 @@ export default class TodoList extends React.Component {
             }
         ];
 
-        //if (this.props.todo.length > 0)
-            const array = this.props.todo.concat(items);
-
-        console.log(array);
-
-        const todoItems = array.map((todo, index) =>
-            <TodoItem key={index} todo={todo}></TodoItem>
+        const todoItems = items.map((todo) =>
+            <TodoItem key={todo.id} todo={todo}></TodoItem>
         );
         return (
             <div>
                 <ul>{todoItems}</ul>
+                <TodoForm items={items}/>
             </div>
         );
     }

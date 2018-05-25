@@ -49,7 +49,6 @@ export default class TodoForm extends React.Component {
                         <input type="text" value={this.state.title} onChange={this.handleTodo.bind(this)}/>
                     </label>
                     <input type="submit" value="submit"/>
-                    <TodoList todo={this.state.todo} />
                 </form>
             </div>
         );
